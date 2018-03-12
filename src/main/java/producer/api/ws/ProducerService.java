@@ -20,7 +20,7 @@ public class ProducerService {
     }
 
     public void publishTask(TaskMessage taskMessage) {
-        String topicName = "SimpleProducerTopic";
+        String topicName = taskMessage.getType();
 
         Producer<String, String> producer = new KafkaProducer<>(props);
 
